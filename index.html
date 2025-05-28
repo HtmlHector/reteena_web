@@ -20,6 +20,7 @@
         /* Apply EB Garamond to all elements */
         * {
             font-family: 'EB Garamond', serif;
+            box-sizing: border-box;
         }
         
         html {
@@ -28,6 +29,7 @@
         
         body {
             font-family: 'EB Garamond', serif;
+            background-color: #fff;
         }
         
         /* Force EB Garamond on all specific elements */
@@ -61,53 +63,49 @@
         /* Section spacing for animations */
         section {
             padding: 20px 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .team-members {
-            margin-top: 10px; /* Reduced from 30px to reduce vertical gap */
+            margin-top: 10px;
             width: 100%;
+            list-style-type: none;
+            padding-left: 0;
         }
         
         /* Instagram-style curved hover effect for team members */
+        .team-members {
+            padding: 0;
+            margin: 0;
+        }
+        
         .member {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0;
-            width: 100%;
-            padding: 12px 15px; /* Increased padding for better hover area */
-            border-radius: 10px; /* Curved edges like Instagram DM */
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            position: relative;
+            padding: 12px 16px;
+            margin: 4px 0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
             cursor: pointer;
-            margin-left: -15px;
-            margin-right: -15px;
-            border: none; /* Remove previous border */
+            background-color: transparent;
         }
         
         .member:hover {
-            background-color: rgba(0, 0, 0, 0.05); /* Low opacity background on hover */
-            transform: translateX(0); /* Remove previous transform */
+            background-color: rgba(0, 0, 0, 0.05);
         }
         
-        .member:not(:last-child) {
-            margin-bottom: 2px; /* Small gap between items */
-        }
-        
-        .member span:first-child {
-            text-align: left;
+        .member-name {
             font-weight: 500;
-            flex: 0 0 auto;
-            margin-right: 20px;
-            font-size: 17px;
             color: #262626;
+            font-size: 16px;
         }
         
-        .member span:last-child {
+        .member-school {
+            color: #8e8e8e;
+            font-size: 14px;
             text-align: right;
-            color: #8e8e8e; /* Instagram-like secondary text color */
-            flex: 1;
-            font-size: 15px;
         }
         
         .team-description {
@@ -119,12 +117,13 @@
             padding: 0 15px;
         }
         
-        /* Container for team members list with padding */
-        .team-members-container {
-            padding: 0 15px;
-            border-radius: 12px;
-            background-color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 20px;
+        /* Team container styles */
+        .team-container {
+            background-color: #f9f9f9;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         
         /* Form elements */
@@ -233,25 +232,55 @@
         </div>
         
         <h3 class="team-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2800">Our Team</h3>
-        <p class="team-description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="3000">We're a close-knit team of standout undergraduates and high schoolers, combining deep expertise in healthcare and AI to push boundaries and create meaningful impact with purpose, vision, and resilience.</p>
-        
-        <div class="team-members-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="3200">
-            <div class="team-members">
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3400"><span>Alex Yang</span><span>North London Collegiate School Jeju</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3600"><span>Jainish Patel</span><span>Lake Minneola High School</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3800"><span>Aarav Minocha</span><span>University of California, Berkeley</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4000"><span>Jessica Wu</span><span>Rochester University</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4200"><span>Bhavya Mamnani</span><span>University of California, Berkeley</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4400"><span>Sunkalp Chandra</span><span>High Technology High School</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4600"><span>Sanghoo Ahn</span><span>North London Collegiate School Jeju</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4800"><span>Nathan He</span><span>Ocean Lakes High School</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="5000"><span>Ivan Ma</span><span>University of California, Berkeley</span></div>
-                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="5200"><span>Olivia Jeon</span><span>White Oaks Secondary School</span></div>
-            </div>
+        <div class="team-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="3000">
+            <p class="team-description">We're a close-knit team of standout undergraduates and high schoolers, combining deep expertise in healthcare and AI to push boundaries and create meaningful impact with purpose, vision, and resilience.</p>
+            
+            <ul class="team-members">
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3200">
+                    <div class="member-name">Alex Yang</div>
+                    <div class="member-school">North London Collegiate School Jeju</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3400">
+                    <div class="member-name">Jainish Patel</div>
+                    <div class="member-school">Lake Minneola High School</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3600">
+                    <div class="member-name">Aarav Minocha</div>
+                    <div class="member-school">University of California, Berkeley</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3800">
+                    <div class="member-name">Jessica Wu</div>
+                    <div class="member-school">Rochester University</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4000">
+                    <div class="member-name">Bhavya Mamnani</div>
+                    <div class="member-school">University of California, Berkeley</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4200">
+                    <div class="member-name">Sunkalp Chandra</div>
+                    <div class="member-school">High Technology High School</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4400">
+                    <div class="member-name">Sanghoo Ahn</div>
+                    <div class="member-school">North London Collegiate School Jeju</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4600">
+                    <div class="member-name">Nathan He</div>
+                    <div class="member-school">Ocean Lakes High School</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4800">
+                    <div class="member-name">Ivan Ma</div>
+                    <div class="member-school">University of California, Berkeley</div>
+                </li>
+                <li class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="5000">
+                    <div class="member-name">Olivia Jeon</div>
+                    <div class="member-school">White Oaks Secondary School</div>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <footer data-aos="fade-up" data-aos-duration="1000" data-aos-delay="5400">
+    <footer data-aos="fade-up" data-aos-duration="1000" data-aos-delay="5200">
         <div class="footer_sub">
             <p>business & general: hello@reteena.org</p>
             <p>Copyright © 2025 Reteena. All rights reserved.</p>
@@ -304,22 +333,22 @@
         // Redirect and thank you message will be handled by the _next parameter
     });
     
-    // Add additional fade-in animation for elements with time buffer
+    // Add hover effect to team members
     document.addEventListener('DOMContentLoaded', function() {
-        const fadeElements = document.querySelectorAll('.fade-in');
+        const members = document.querySelectorAll('.member');
         
-        // Function to add random delay to animations
-        const staggerAnimations = function() {
-            let delay = 0;
-            fadeElements.forEach(element => {
-                // Increment delay for each element (300-500ms between animations)
-                delay += Math.floor(Math.random() * 200) + 300;
-                element.style.transitionDelay = delay + 'ms';
+        members.forEach(member => {
+            member.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
             });
-        };
+            
+            member.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+            });
+        });
         
-        // Apply staggered delays
-        staggerAnimations();
+        // Add additional fade-in animation for elements
+        const fadeElements = document.querySelectorAll('.fade-in');
         
         const fadeInOnScroll = function() {
             fadeElements.forEach(element => {
