@@ -67,38 +67,64 @@
             margin-top: 10px; /* Reduced from 30px to reduce vertical gap */
             width: 100%;
         }
+        
+        /* Instagram-style curved hover effect for team members */
         .member {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0; /* Remove bottom margin */
+            align-items: center;
+            margin-bottom: 0;
             width: 100%;
-            padding: 8px 0; /* Add padding instead of margin */
-            border-bottom: 1px solid #eee; /* Add thin divider line between names */
-            transition: transform 0.5s ease, opacity 0.5s ease;
+            padding: 12px 15px; /* Increased padding for better hover area */
+            border-radius: 10px; /* Curved edges like Instagram DM */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            margin-left: -15px;
+            margin-right: -15px;
+            border: none; /* Remove previous border */
         }
+        
         .member:hover {
-            transform: translateX(5px);
+            background-color: rgba(0, 0, 0, 0.05); /* Low opacity background on hover */
+            transform: translateX(0); /* Remove previous transform */
         }
-        .member:first-child {
-            padding-top: 0; /* Remove top padding from first member to reduce gap */
+        
+        .member:not(:last-child) {
+            margin-bottom: 2px; /* Small gap between items */
         }
+        
         .member span:first-child {
             text-align: left;
             font-weight: 500;
-            flex: 0 0 auto; /* Don't grow, don't shrink, auto-size */
-            margin-right: 20px; /* Add space after name */
+            flex: 0 0 auto;
+            margin-right: 20px;
+            font-size: 17px;
+            color: #262626;
         }
+        
         .member span:last-child {
             text-align: right;
-            color: #555;
-            flex: 1; /* Take up remaining space */
+            color: #8e8e8e; /* Instagram-like secondary text color */
+            flex: 1;
+            font-size: 15px;
         }
+        
         .team-description {
             margin-top: 10px;
-            margin-bottom: 10px; /* Reduced from 20px to reduce vertical gap */
+            margin-bottom: 15px;
             line-height: 1.5;
             text-align: justify;
             text-justify: inter-word;
+            padding: 0 15px;
+        }
+        
+        /* Container for team members list with padding */
+        .team-members-container {
+            padding: 0 15px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
         }
         
         /* Form elements */
@@ -137,6 +163,12 @@
         
         #email-submit:hover {
             transform: scale(1.05);
+        }
+        
+        /* Team section title */
+        .team-title {
+            margin-bottom: 15px;
+            padding: 0 15px;
         }
     </style>
 </head>
@@ -200,19 +232,22 @@
             <p id="email-message" class="email-message">Please enter your email address</p>
         </div>
         
-        <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2800">Our Team</h3>
+        <h3 class="team-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2800">Our Team</h3>
         <p class="team-description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="3000">We're a close-knit team of standout undergraduates and high schoolers, combining deep expertise in healthcare and AI to push boundaries and create meaningful impact with purpose, vision, and resilience.</p>
-        <div class="team-members" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="3200">
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3400"><span>Alex Yang</span><span>North London Collegiate School Jeju</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3600"><span>Jainish Patel</span><span>Lake Minneola High School</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3800"><span>Aarav Minocha</span><span>University of California, Berkeley</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4000"><span>Jessica Wu</span><span>Rochester University</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4200"><span>Bhavya Mamnani</span><span>University of California, Berkeley</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4400"><span>Sunkalp Chandra</span><span>High Technology High School</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4600"><span>Sanghoo Ahn</span><span>North London Collegiate School Jeju</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4800"><span>Nathan He</span><span>Ocean Lakes High School</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="5000"><span>Ivan Ma</span><span>University of California, Berkeley</span></div>
-            <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="5200"><span>Olivia Jeon</span><span>White Oaks Secondary School</span></div>
+        
+        <div class="team-members-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="3200">
+            <div class="team-members">
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3400"><span>Alex Yang</span><span>North London Collegiate School Jeju</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3600"><span>Jainish Patel</span><span>Lake Minneola High School</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="3800"><span>Aarav Minocha</span><span>University of California, Berkeley</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4000"><span>Jessica Wu</span><span>Rochester University</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4200"><span>Bhavya Mamnani</span><span>University of California, Berkeley</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4400"><span>Sunkalp Chandra</span><span>High Technology High School</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4600"><span>Sanghoo Ahn</span><span>North London Collegiate School Jeju</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="4800"><span>Nathan He</span><span>Ocean Lakes High School</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="5000"><span>Ivan Ma</span><span>University of California, Berkeley</span></div>
+                <div class="member" data-aos="fade-left" data-aos-duration="600" data-aos-delay="5200"><span>Olivia Jeon</span><span>White Oaks Secondary School</span></div>
+            </div>
         </div>
     </section>
 
