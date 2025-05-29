@@ -1,165 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Roboto Mono", monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*    overflow: hidden; */
-}
-
-p {
-    max-width: 60ch;
-    line-height: 1.6;
-}
-
-main {
-    padding: 3em;
-}
-
-.introduction {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 1em;
-}
-
-img {
-    height: 300px;
-    width: 60ch;
-    margin: 2em 0;
-}
-
-.achievements {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-footer {
-    margin-top: 1.5em; /* Reduced from 3em to 1.5em */
-
-    a {
-        text-decoration: underline;
-        color: black;
-    }
-
-    .footer_sub {
-        color: #9f9f9f;
-        margin-top: 1em; /* Reduced from 3em to 1em */
-    }
-}
-
-.strong__links {
-    color: blue;
-}
-
-/* Remove underline from external link */
-.external-link {
-    text-decoration: none;
-    color: blue;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    /*margin-bottom: 1em;*/
-
-    h1 {
-        font-family: "Poppins", sans-serif !important;
-        font-weight: 400;
-    }
-
-    svg {
-        height: 30px;
-        width: 30px;
-        color: #0274b3;
-    }
-}
-
-/* Email signup styles */
-.email-signup {
-    margin: 1em 0; /* Reduced from 2em to 1em */
-    max-width: 60ch;
-    width: 100%;
-}
-
-#email-form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-    margin-bottom: 0.3em; /* Reduced from 0.5em to 0.3em */
-}
-
-#email-input {
-    flex: 1;
-    padding: 8px; /* Further reduced from 12px to 8px */
-    border: 1px solid #e1e1e1;
-    border-radius: 8px;
-    font-family: "Roboto Mono", monospace;
-    font-size: 14px;
-    color: #777;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#email-input:focus {
-    border-color: #aaa;
-}
-
-#email-submit {
-    background-color: #f5f5f5;
-    color: #333;
-    border: 1px solid #e1e1e1;
-    border-radius: 8px;
-    padding: 8px 16px; /* Further reduced from 12px 20px to 8px 16px */
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    white-space: nowrap;
-}
-
-#email-submit:hover {
-    background-color: #f5f5f5; /* Keep the same color on hover */
-}
-
-.email-message {
-    font-size: 13px;
-    color: #ff3b30;
-    margin-top: 4px; /* Reduced from 8px to 4px */
-    font-family: "Roboto Mono", monospace;
-}
-
-/* --- Row Hover Effect for Member List --- */
 .member {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 0;
     width: 100%;
-    padding: 10px 0;
-    border-radius: 6px;
-    transition: background 0.12s;
+    padding: 6px 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 .member:hover {
-    background: #ededed;
-    box-shadow: 0 0 0 1px #d0d0d0;
-    cursor: pointer;
+    transform: translateX(5px);
+    background-color: rgba(0, 0, 0, 0.05);
 }
-.member span {
-    flex-basis: 48%;
-    text-align: left;
-}
-.member span:last-child {
-    text-align: right;
+
+.member:first-child {
+    padding-top: 0;
 }
